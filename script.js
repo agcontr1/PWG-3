@@ -18,7 +18,7 @@ function generatePassword() {
 
   var lowercaseallowed = true;
   var lowercase = "htzgyvdbkaqrcxuslpmnijofew";
-  
+
   var hasLowercase = confirm("Do you want lowercase characters?");
   if (hasLowercase) {
     alert(" Password will have lowercase characters.");
@@ -51,4 +51,33 @@ function generatePassword() {
   } else {
     alert("Your password won't have special characters.");
   }
+  var possibleCharacters = "";
+  if (hasLowercase) {
+    possibleCharacters += lowercase;
+  }
+  if (hasUppercase) {
+    possibleCharacters += uppercase;
+  }
+  if (hasNumbers) {
+    possibleCharacters += numbers;
+  }
+  if (hasSpecial) {
+    possibleCharacters += specialchars;
+  }
 
+  var finalPassword = "";
+  for (let i = 0; i < numberOfCharacters; i++) {
+    let rng = Math.floor(Math.random() * possibleCharacters.length);
+    finalPassword += possibleCharacters.charAt(rng);
+  }
+
+  return finalPassword;
+}
+
+console.log(generatePassword());
+
+function generateAndDisplayPassword() {
+  var password = generatePassword();
+  var passwordElement = document.getElementById("password");
+  passwordElement.textContent = password;
+}
