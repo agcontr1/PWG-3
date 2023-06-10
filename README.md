@@ -1,6 +1,8 @@
 # PWG-3
 Password generator 3 
 
+Deployed website: https://agcontr1.github.io/PWG-3/
+
 Prompt:
 AS AN employee with access to sensitive data
 I WANT to randomly generate a password that meets certain criteria
